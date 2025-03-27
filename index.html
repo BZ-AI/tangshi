@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="唐诗三百首历史策略游戏 - 在诗词中体验历史">
+    <meta property="og:title" content="唐诗三百首历史策略游戏">
+    <meta property="og:description" content="在诗词中体验历史，做出你的选择">
+    <meta property="og:image" content="/images/game-preview.jpg">
+    <title>唐诗三百首历史策略游戏</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- 预加载关键资源 -->
+    <link rel="preload" href="/fonts/KaiTi.woff2" as="font" type="font/woff2" crossorigin>
+</head>
+
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>唐诗三百首历史策略游戏</h1>
+            <div class="score-board">
+                <span>积分: </span>
+                <span id="score">0</span>
+            </div>
+        </header>
+
+        <main class="game-main">
+            <div id="question-container" class="question-section"></div>
+            <div id="result-container" class="result-section" style="display: none;">
+                <p id="result-text"></p>
+                <div class="poem-card" id="poem-container"></div>
+                <div class="action-buttons">
+                    <button class="btn read-btn" onclick="readPoem()">
+                        <i class="icon-read"></i>朗读诗词
+                    </button>
+                    <button class="btn share-btn" onclick="shareGame()">
+                        <i class="icon-share"></i>分享
+                    </button>
+                    <button class="btn next-btn" onclick="showNextQuestion()">
+                        <i class="icon-next"></i>下一题
+                    </button>
+                </div>
+            </div>
+        </main>
+
+        <div id="share-modal" class="modal">
+            <div class="modal-content">
+                <h3>分享到</h3>
+                <div class="share-buttons">
+                    <button onclick="shareToWeChat()">微信</button>
+                    <button onclick="shareToWeibo()">微博</button>
+                    <button onclick="shareToQQ()">QQ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 使用 type="module" 实现代码分割 -->
+    <script type="module" src="js/game.js"></script>
+    <script type="module" src="js/share.js"></script>
+    <script type="module" src="js/audio.js"></script>
+</body>
+</html>
